@@ -1,0 +1,61 @@
+js services.services.autoCompleteSearch.class_="@mozilla.org/autocomplete/search;1?name=unifiedcomplete"
+
+colorscheme zenburn
+
+" set tabnumbers
+
+" completion priority in :[tab]open
+" engines and kws, bookmarks, suggestions, awesome bar
+set complete=sbSl
+
+" show tabbar only
+set gui=none,tabs,addons
+
+" hide close buttons
+set! browser.tabs.closeButtons=2
+
+" open tab in the background
+set! browser.tabs.loadDivertedInBackground=true
+
+" variables {{{1
+" this must be set before map operation, otherwise use default value.
+let mapleader=','
+
+" No more oopsie daisies
+nnoremap ZZ <Nop>
+nnoremap <F5>    <Nop>
+nnoremap <BS> <Nop>
+
+nnoremap j   4<C-e>
+nnoremap k   4<C-y>
+nnoremap J   <C-d>
+nnoremap K <C-u>
+
+nnoremap <S-h> gT
+nnoremap <S-l> gt
+nnoremap h <M-Left>
+nnoremap l <M-Right>
+nnoremap <C-h> :tabmove! -1<CR>
+nnoremap <C-l> :tabmove! +1<CR>
+nnoremap <A-h> <A-Left>
+nnoremap <A-l> <A-Right>
+
+"nnoremap <C-h> <t>
+
+nnoremap gg      m'gg
+nnoremap G m'
+
+" Go to first last b
+nnoremap gf g^
+nnoremap gl g$
+
+nnoremap / m'/
+
+nnoremap <Leader><Leader> <Leader>
+
+" Unhighlight
+noremap <Leader>h :nohlsearch<CR>
+
+nnoremap <Leader>u :unload -1<CR>
+
+nnoremap . b
