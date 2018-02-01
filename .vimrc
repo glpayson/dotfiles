@@ -40,8 +40,9 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
-" copy/paste to clipboard
-set clipboard^=unnamedplus,unnamed
+if $TMUX == ''
+    set clipboard^=unnamedplus,unnamed
+endif
 
 " Default NERDTreeMirror
 map <silent> <leader>n :NERDTreeToggle<CR> :NERDTreeMirror<CR>

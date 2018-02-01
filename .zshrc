@@ -163,7 +163,7 @@ alias tokentest='token test | copy && date +"%T"'
 alias reset_motion_gestures='killall Dock'
 
 # Launch python SimpleHTTPServer in current dir
-alias server="ifconfig | gsed -n '/en0:/{n;n;n;p}' | awk '{print \"Serving publicly at: \" \$2 \":8000\"}' && python -m http.server"
+alias server="ifconfig | gsed -n '/en0:/{n;n;n;p}' | awk '{print \"Serving publicly at: \" \$2 \":8000\"}' && python3 -m http.server"
 
 # pbcopy without newline
 alias copy="tr -d '\n' | pbcopy"
@@ -184,6 +184,10 @@ alias got='git '
 alias get='git '
 alias clone='git clone'
 alias gcom='git commit -m '
+
+# Docker
+alias docker_rmi_all='docker images -a | sed '\''1 d'\'' | awk '\''{print }'\'' | xargs -L1 docker rmi -f'
+alias docker_rm_all='docker ps -a | sed '\''1 d'\'' | awk '\''{print }'\'' | xargs -L1 docker rm'
 
 # Sprunge 
 alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
@@ -220,8 +224,19 @@ encode() {
 	elif [ "$1" = "-c" ]; then
 		echo "$2" | base64 | perl -pe 'chomp if eof' | pbcopy
 	elif [ "$1" = "-p" ]; then
-		pbpaste | base64 --decode | perl -pe 'chomp if eof' | pbcopy
+		pbpaste | base64 | perl -pe 'chomp if eof' | pbcopy
 	else
 		echo $1 | base64 
 	fi 
+}
+
+# Nanoseconds since epoch UTC (useful for DynamoDB filters)
+epoch_nano() {
+    if [ "$#" -ne 1 ]; then
+        gdate +%s%3N
+	elif [ "$1" = "-h" ]; then
+        echo 'E.g.: epoch_nano "2014-02-14T12:30"'
+    else
+        gdate -d$1 +%s%3N
+    fi
 }
