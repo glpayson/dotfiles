@@ -117,10 +117,33 @@ alias tmux_confr='tmux source-file ~/.tmux_conf'
 # Environment Variables
 BLANKSPACE_LOCAL_RUN='true'
 export BLANKSPACE_LOCAL_RUN
+export GITHUB_USER='aegeanokra'
+export GITHUB_PWD='0kraisgross'
 
 # These are for rr-web-services
 export solr_env='production'
 export aeskey='lvu2wsa6jmtc0d93xk8izr4yph5bnfqo'
+
+export NR_INSIGHTS_KEY='OxKCXhqNlvctU1An4AlvZA6HcGjkDRxY'
+export NR_API_KEY='29a70fef25e09ab176cfed1e32ea2d6098fe80a025c30c3'
+export API_URL_US='https://api.careerbuilder.com'
+export API_URL_EU='https://api.careerbuilder.eu'
+export API_URL_TEST='https://wwwtest.api.careerbuilder.com'
+export CID_US='4835105c'
+export CID_EU='Cc55385c7'
+export CID_EU2='Cc55385c7'
+export CID_TEST='cf49c959'
+export SIG_US='Hbib49+9H73WVkcyKJS6x1tRQZGKKNpp6vFzFojADvrV6sZJa4gj7ODLBO4HARAf5tzxf9HWF/L28Hmmyk3s1w=='
+export SIG_EU='zBxLpQFpyTYz6xS5vPsx5L+alzswQQ1tE3BNiqUeQkbiyGDROZmr5Xs+P0v8w2fDj2aNokVHlCtzsxpThJ33wQ=='
+export SIG_TEST='QuzlcfO3JL1t5ZGQq5TV/ByIYvIs3GpnbV+pmPZ8FLdrCyV3zvnlDmHVhbAGKG/rX2UDgcpt18d2zoQD0MP6Wg=='
+export ARTIFACTORY_USERNAME='dsaduploader'
+export ARTIFACTORY_PASSWORD='On1y4Me!'
+export PROJECT_DIR='/Users/lpayson/Prog/Work'
+export REGION='us-west-2'
+export AWS_DEFAULT_REGION='us-west-2'
+export GITHUB_OAUTH_TOKEN='aa553a54d84a387315d40079a94f9e618228feac'
+
+export S3_SKILLS='s3://dsad-dev/dsad/skills/'
 
 # Quicker navigation
 alias ..="cd .."
@@ -188,12 +211,17 @@ alias gcom='git commit -m '
 # Docker
 alias docker_rmi_all='docker images -a | sed '\''1 d'\'' | awk '\''{print }'\'' | xargs -L1 docker rmi -f'
 alias docker_rm_all='docker ps -a | sed '\''1 d'\'' | awk '\''{print }'\'' | xargs -L1 docker rm'
+alias docker_stop_all='docker stop $(docker ps -q)'
 
 # Sprunge 
 alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
 
 # External IP
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
+
+# AWS
+alias s3ls='aws s3 ls'
+
 
 # Weather
 weather() {
