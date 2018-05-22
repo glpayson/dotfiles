@@ -141,8 +141,6 @@ export ARTIFACTORY_PASSWORD='On1y4Me!'
 export PROJECT_DIR='/Users/lpayson/Prog/Work'
 export REGION='us-west-2'
 export AWS_DEFAULT_REGION='us-west-2'
-export GITHUB_OAUTH_TOKEN='aa553a54d84a387315d40079a94f9e618228feac'
-
 export S3_SKILLS='s3://dsad-dev/dsad/skills/'
 
 # Quicker navigation
